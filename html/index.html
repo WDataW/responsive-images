@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width initial-scale:1">
+</head>
+<body>
+    <img 
+    srcset="sea640.jpg 640w,sea1920.jpg 1920w, sea5760.jpg 5760w"
+    sizes="(max-width:700px) 600px, (max-width:1500px) 1920px,5760px"
+    alt="sea image">
+    <div id="notification-bar" class="notification-bar"></div>
+
+    <script>
+        // Function to display screen and viewport widths
+        function displayWidths() {
+            const screenWidth = screen.width;
+            const viewportWidth = window.innerWidth;
+
+            const message = `Screen Width: ${screenWidth}px | Viewport Width: ${viewportWidth}px`;
+            
+            // Display the message in the notification bar
+            document.getElementById('notification-bar').textContent = message;
+        }
+
+        // Initial display
+        displayWidths();
+
+        // Update the message when the window is resized
+        window.addEventListener('resize', displayWidths);
+    </script>
+</body></html>
